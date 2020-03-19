@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->text('body');
             $table->timestamps();
 
-            $table->foreign('message_id')->references('id')->on('messages');
+            $table->foreign('message_id')->references('id')->on('messages')->onDelete('cascade');
         });
     }
 
