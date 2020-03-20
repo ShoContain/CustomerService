@@ -5,7 +5,7 @@
       <InputField name="name" label="お名前" placeholder="山田　太郎" @update:field="form.name=$event" :errors="error"/>
       <InputField name="email" label="Email" placeholder="example@email.com" @update:field="form.email=$event" :errors="error"/>
       <InputField name="company" label="会社名" placeholder="〇〇株式会社" @update:field="form.company=$event" :errors="error"/>
-      <InputField name="birthday" label="お誕生日" placeholder="年-月ー日"  @update:field="form.birthday=$event" :errors="error"/>
+      <InputField name="birthday" label="お誕生日" placeholder="年/月/日"  @update:field="form.birthday=$event" :errors="error" />
 
       <div class="flex justify-end pt-3 ">
         <button type="button" name="button"　class="rounded mr-3 p-2 text-red-500 border hover:bg-gray-300 hover:text-red-400 uppercase">Cancel</button>
@@ -43,7 +43,7 @@ export default {
         this.error = errors.response.data.errors;
       });
     }
-  }
+  },
 }
 </script>
 

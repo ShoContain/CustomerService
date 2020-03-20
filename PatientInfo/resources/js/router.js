@@ -4,12 +4,15 @@ import ContactCreate from "./views/ContactCreate";
 import ExampleComonent from "./components/ExampleComonent";
 import ContactShow from "./views/ContactShow";
 import ContactEdit from "./views/ContactEdit";
+import ContactIndex from "./views/ContactIndex";
+
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
   routes:[
     {path:'',component:ExampleComonent},
+    {path:'/contacts',component:ContactIndex},
     {path:'/contacts/create',component:ContactCreate},
     {path:'/contacts/:id',component:ContactShow},
     {path:'/contacts/:id/edit',component:ContactEdit},

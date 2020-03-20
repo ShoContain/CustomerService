@@ -142,7 +142,7 @@ class ContactsTest extends TestCase
           'contact_id'=>$contact->id,
           'name'=>$contact->name,
           'email'=>$contact->email,
-          'birthday'=>$contact->birthday->format('Y年n月d日'),
+          'birthday'=>$contact->birthday->format('Y/n/d'),
           'company'=>$contact->company,
           'last_updated'=>$contact->updated_at->diffForHumans(),
         ],

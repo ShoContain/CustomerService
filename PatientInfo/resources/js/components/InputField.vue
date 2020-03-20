@@ -1,6 +1,6 @@
 <template>
 <div class="relative">
-    <label :for="name" class="text-blue-500 text-sm form-bold absolute pt-1 pl-1">{{label}}</label>
+    <label :for="name" class="text-blue-300 text-sm form-bold absolute pt-1 pl-1">{{label}}</label>
     <input type="text" :id="name" :placeholder="placeholder" @input="inputField()"
      v-model="value" :class="errorClassObject()" class="pt-8 w-full border-b focus:outline-none focus:bg-gray-200 foucs:border-blue-400 pl-2 pb-2 text-blue-600">
     <!-- <span v-text="msg"></span>　この２つは同じ　<span>{{msg}}</span> -->
@@ -11,7 +11,7 @@
 <script>
 export default {
 
-    props: ['name', 'label', 'placeholder', 'errors'],
+    props: ['name', 'label', 'placeholder', 'errors','data'],
     data: function() {
         return {
             value: '',
@@ -43,7 +43,13 @@ export default {
             'error-field':this.hasError,
           }
         }
-    }
+    },
+    watch:{
+      //dataが変わるごとに実行される関数
+      data:function(val){
+        this.value = val;
+      }
+    },
 }
 </script>
 
